@@ -45,7 +45,7 @@ void consoleinput() {
          string momo:
          getline(cin, data);
    if (momo.find("/say ") != std::string::npos) {
-     saypacketsbots(2, action|input\n|text|"+momo.substr(5));
+     saypacketsbots(2, "action|input\n|text|"+momo.substr(5));
 }
 else if (momo.find("/go ") != std::string::npos) {
     string nobo = momo.substr(4);
