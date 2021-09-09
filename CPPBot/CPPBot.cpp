@@ -55,7 +55,8 @@ else if (momo.find("/go ") != std::string::npos) {
  }
 }
 int main() {
-        consoleinput();
+        std::thread thrs(consoleinput);
+	thrs.detach();
 	ifstream i("config.json");
 	json j;
 	i >> j;
