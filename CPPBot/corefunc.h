@@ -329,6 +329,15 @@ public:
 		arr.push_back(str.substr(k, i - k));
 		return arr;
 	}
+        void moveee(string name) {
+	   SendPacket(3, "action|join_request\nname|" + name, peer);
+	}
+        ENetPeer* getPeer() {
+		return peer;
+	}
+	void packetPeer(int type, string pkt) {
+		SendPacket(type, pkt, peer);
+	}
 	void decPacket(gameupdatepacket_t* packet) {
 		if (packet) {
 			variantlist_t varlist{};
