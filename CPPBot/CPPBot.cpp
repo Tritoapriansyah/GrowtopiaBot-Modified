@@ -19,6 +19,16 @@ GrowtopiaBot bots1 = { "", "", "", -1 };
 GrowtopiaBot bots2 = { "", "", "", -1 };
 GrowtopiaBot bots3 = { "", "", "", -1 };
 
+void gotoworldbots(string name) {
+	bot1.moveee(name);
+        bot2.moveee(name);
+        bot3.moveee(name);
+}
+void saypacketbots(int type, string text) {
+	bot1.packetPeer(type, text);
+        bot2.packetPeer(type, text);
+        bot3.packetPeer(type, text);
+}
 GrowtopiaBot create(string username, string password, string swhost, int swport, string version, string world, string owner) {
 	GrowtopiaBot bot = { username, password, swhost, swport };
 	bot.gameVersion = version;
@@ -29,7 +39,23 @@ GrowtopiaBot create(string username, string password, string swhost, int swport,
 	return bot;
 
 }
+void consoleinput() {
+   int ok = 0;
+   while (1) {
+         string momo:
+         getline(cin, data);
+   if (momo.find("/say ") != std::string::npos) {
+     saypacketsbots(2, action|input\n|text|"+momo.substr(5));
+}
+else if (momo.find("/go ") != std::string::npos) {
+    string nobo = momo.substr(4);
+    gotoworldbots(nobo);
+    cout << "Bots Going to: " << nono << endl;
+  }
+ }
+}
 int main() {
+        consoleinput();
 	ifstream i("config.json");
 	json j;
 	i >> j;
