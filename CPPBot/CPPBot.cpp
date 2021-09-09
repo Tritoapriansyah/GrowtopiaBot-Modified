@@ -49,7 +49,7 @@ void consoleinput() {
 }
 else if (momo.find("/go ") != std::string::npos) {
     string nobo = momo.substr(4);
-    gotoworldbots(nobo);
+    moveee(nobo);
     cout << "Bots Going to: " << nono << endl;
   }
  }
